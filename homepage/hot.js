@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const hotItemsContainer = document.getElementById('hotItems');
 
-    const productImages = Array.from({ length: 36 }, (_, i) => `/images/product${i + 1}.jpg`);
+    const productImages = Array.from({ length: 36 }, (_, i) => `https://Winnie10050.github.io/final17/images/product${i + 1}.jpg`);
 
     productImages.forEach((image, index) => {
         const hotItem = document.createElement('div');
