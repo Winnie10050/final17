@@ -213,7 +213,7 @@ function renderProducts(products) {
         const productDiv = document.createElement("div");
         productDiv.classList.add("product-item");
         productDiv.innerHTML = `
-            <a href="${product.link}">
+            <a href="details/${product.link}">
                 <img src="${product.image}" alt="${product.name}">
                 <p>${product.name}</p>
                 <p>${product.price}</p>
@@ -227,7 +227,7 @@ function renderProducts(products) {
 document.getElementById("addToCartButton").addEventListener("click", () => {
     const productName = "紅髮香克斯"; 
     const productPrice = 700; 
-    const productImage = "../images/product1.jpg"; 
+    const productImage = "images/product1.jpg"; 
     const quantity = parseInt(document.getElementById("quantity").value); 
 
     if (quantity < 1) {
