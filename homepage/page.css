@@ -1,0 +1,391 @@
+/* 重置所有元素的默認樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 設定網站整體的字體與背景顏色 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f4f2;
+    color: #333;
+}
+
+/* 頂部標頭的樣式 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    position: fixed; /* 固定在頁面頂部 */
+    top: 0;
+    left: 0; /* 確保頂部欄固定在左上角 */
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 添加陰影效果 */
+}
+
+header h1 a {
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+header h1 a:hover {
+    transform: scale(1.1); /* 頂部標題懸停時放大 */
+}
+
+/* 搜索框與按鈕容器樣式 */
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* 將按鈕和搜索框靠右對齊 */
+    gap: 10px;
+    flex: 1; /* 占滿剩餘空間，確保向右推移 */
+}
+
+/* 修正 banner 樣式，讓左側標題和右側按鈕對齊 */
+.banner {
+    display: flex;
+    justify-content: space-between; /* 左右對齊 */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* 標題樣式 */
+.logo-and-nav h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: white;
+}
+
+/* 搜索框樣式 */
+.actions input[type="text"] {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 150px; /* 調整搜索框寬度 */
+}
+
+/* 購物車與帳號按鈕的樣式 */
+.cart, .account {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #444; /* 初始背景深灰色 */
+    color: #fff; /* 白色文字 */
+    font-size: 14px; /* 調整字體大小 */
+    font-weight: bold; /* 字體加粗 */
+    text-decoration: none; /* 去除文字裝飾 */
+    border-radius: 6px; /* 輕微圓角 */
+    border: none; /* 去除邊框 */
+    cursor: pointer; /* 滑鼠樣式 */
+    text-align: center; /* 居中文字 */
+    transition: background-color 0.3s ease; /* 平滑過渡背景顏色 */
+}
+
+/* 懸停效果 */
+.cart:hover, .account:hover {
+    background-color: #555; /* 背景變成更淡的灰色 */
+}
+
+
+/* 導航列樣式 */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #d3d3d3; /* 使用非透明背景 */
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 添加陰影增強視覺層次 */
+}
+
+/* 導航列文字樣式 */
+nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    transition: transform 0.3s ease; /* 僅保持縮放效果 */
+}
+
+/* 動態底線效果 */
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* 與文字保持適當距離 */
+    left: 0;
+    width: 0;
+    height: 2px; /* 底線厚度 */
+    background-color: #333; /* 底線顏色 */
+    transition: width 0.3s ease; /* 動畫效果 */
+}
+
+/* 懸停時文字放大並顯示底線 */
+nav a:hover {
+    transform: scale(1.1); /* 懸停時文字略微放大 */
+}
+
+nav a:hover::after {
+    width: 100%; /* 懸停時底線展開至整個文字寬度 */
+}
+
+/* 主內容區域 */
+.main-content {
+    padding-top: 100px; /* 預留空間避免被導航列遮住 */
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* 商品圖片展示區域 */
+.product-display {
+    position: relative;
+    height: 600px;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.product-display:hover {
+    transform: scale(1.05);
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+    background-color: #f9f4f2;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.shop-now {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: transparent;
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #333;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.shop-now:hover {
+    background-color: #333;
+    color: white;
+    border-color: #333;
+}
+
+/* 類別區塊調整 */
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 30px auto;
+    gap: 20px;
+    max-width: 1200px;
+}
+
+.category {
+    position: relative;
+    background-color: #333;
+    width: calc(20% - 10px);
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.category:hover {
+    transform: scale(1.15);
+    z-index: 10;
+}
+
+.category-placeholder {
+    position: relative;
+    background-color: #777;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.placeholder-text {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.category-display {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.category-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.category:hover .category-image {
+    opacity: 0.9;
+}
+
+/* Footer 樣式 */
+.site-footer {
+    background-color: #333; /* 深灰色背景 */
+    color: white; /* 白色文字 */
+    text-align: center; /* 文字居中 */
+    padding: 10px 0; /* 上下留白 */
+    font-size: 14px; /* 字體大小 */
+    position: relative;
+    bottom: 0;
+    width: 100%; /* 確保寬度充滿 */
+    z-index: 10;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1); /* 添加頂部陰影 */
+}
+
+/* 響應式支持 */
+@media (max-width: 768px) {
+    .categories {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .category {
+        width: 100%;
+        height: auto;
+    }
+
+    .category-display {
+        height: 200px;
+    }
+
+    header {
+        padding: 10px 15px;
+    }
+
+    nav {
+        justify-content: flex-start; 
+    }
+
+    nav a {
+        margin: 0 10px;
+        font-size: 16px;
+    }
+
+    .site-footer {
+    font-size: 12px;
+}
+
+}
+
+.login-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1001;
+}
+
+.login-modal.active {
+    display: block;
+}
+
+.login-modal h3 {
+    margin-top: 0;
+}
+
+.login-modal input[type="text"], 
+.login-modal input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.login-modal button {
+    padding: 8px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-modal button:hover {
+    background-color: #555;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-overlay.active {
+    display: block;
+}
