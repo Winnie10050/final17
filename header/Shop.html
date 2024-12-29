@@ -184,7 +184,7 @@
     const productCard = document.createElement("div");
     productCard.classList.add("product-card");
     productCard.innerHTML = `
-      <a href="/${product.link}" style="text-decoration: none; color: inherit;">
+      <a href="${product.link}" style="text-decoration: none; color: inherit;">
         <img src="${product.image}" alt="${product.name}">
         <h3>${product.name}</h3>
         <p>價格: $${product.price}</p>
